@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Piazzolla', serif;
+}
+
+:root {
+    --main-bg: #1e272e;
+    --main-color: #0097e6;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* Hide The Page Code Start */
+
+.hide {
+    display: none;
+}
+
+/* Hide The Page Code End */
+
+/* ------ Home Page Code Start ------ */
+
+.weatherHeaderContainer {
+    width: 100%;
+    background-color: var(--main-bg);
+}
+
+nav {
+    display: flex;
+    padding: 1% 7%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 900;
+
+}
+
+.navHeaderDiv {
+    flex: 1;
+    text-align: right;
+}
+
+.navHeaderDiv ul li {
+    list-style: none;
+    padding: 8px 12px;
+    display: inline-block;
+    position: relative;
+
+}
+
+.navHeaderDiv ul li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+
+}
+
+.navHeaderDiv ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.navHeaderDiv ul li:hover::after {
+    width: 100%;
+}
+
+nav .fa {
+    display: none;
+}
+
+/* -----  Home Page Media Query Code Start -------- */
+
+@media (max-width : 768px) {
+
+    .navHeaderDiv ul li {
+        display: block;
+    }
+
+    .navHeaderDiv {
+        position: absolute;
+        background-color: var(--main-bg);
+        height: 100vh;
+        width: 20rem;
+        top: 0;
+        right:-20rem;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+
+    nav .fa {
+        display: block;
+        color: #fff;
+        margin: 1.2rem;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+
+    .navHeaderDiv ul {
+        padding: 3rem;
+    }
+
+    .navHeaderDiv ul li a {
+        font-size: 2.1rem;
+    }
+
+}
+
+/* -----  Home Page Media Query Code End -------- */
+
+
+.main_header_left {
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.main_header_left p {
+    font-size: 2rem;
+}
+
+.main_header_left h1 {
+    font-size: 4rem;
+    margin: 1rem 0 4rem 0;
+    text-transform: capitalize;
+}
+
+.main_header_left .text-clr {
+    color: var(--main-color);
+}
+
+.main_header_left button {
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 6px -6px #000;
+    cursor: pointer;
+}
+
+.main_header_left button:hover {
+    box-shadow: 0 8px 6px -6px var(--main-color);
+}
+
+.main_header_right {
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.mains-img img {
+    height: 30rem;
+    border-radius: 2rem;
+}
+
+/* -----  Home Page Code End -------- */
+
+/* -----  Weather Page Code Start -------- */
+
+.temp_form {
+    width: 60%;
+    position: relative;
+    margin: 4rem auto 4rem;
+}
+
+.temp_form input[type="text"] {
+    width: 100%;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    background: #1e202b;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 1.7rem;
+    border-radius: 3rem;
+}
+
+::placeholder {
+    color: #bfc1c8;
+}
+
+.temp_form input[type="submit"] {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+    border: none;
+    background: #009ad8;
+    padding: 0 3rem;
+    border-radius: 3rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.temp_form input[type="submit"]:hover {
+    color: #009ad8;
+    background: #fff;
+}
+
+.tempInformation {
+    width: 37rem;
+    margin: auto;
+    min-height: 20rem;
+    background-color: #323544;
+    border-radius: 1rem;
+    font-family: "Roboto", sans-serif;
+}
+
+.top_layer {
+    width: 100%;
+    height: 20%;
+    background-color: #2d3030;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.top_layer p {
+    color: #fff;
+    font-weight: 300;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.main_layer {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+.main_layerUpper{
+    display: flex;
+    justify-content: space-between;
+}
+.main_layer #cityId {
+    padding: 1rem 0;
+    color: #bfc1c8;
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.main_layer #weatherMain{
+    padding: 1rem 0; 
+    color: #bfc1c8;
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.main_layer .middle_layer {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.main_layer .middle_layer p,
+.main_layer .middle_layer fa {
+    font-size: 6rem;
+    font-weight: 900;
+}
+
+.fa {
+    color: #009ad8;
+}
+
+sup {
+    font-size: 5.5rem;
+    margin-top: -2rem;
+}
+
+.data_hide {
+    visibility: hidden;
+    transition: all 0.3s linear;
+}
+
+/* -----  Weather Page Meadia Query Code Start -------- */
+
+
+
+@media (max-width:768px) {
+    .main_header_left {
+        height: auto;
+        margin: 5rem 0;
+    }
+
+    .main_header_right {
+        height: auto;
+        margin-top: 1000rem;
+    }
+
+    .temp_form {
+        width: auto
+    }
+
+    .tempInformation {
+        width: auto;
+    }
+}
+
+/* -----  Weather Page Code End -------- */
+
+
+/* -----  About Page Code Start -------- */
+
+.aboutContainer {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 40, 0.7), rgba(4, 9, 40, 0.7)), url(images/bg2.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.text_box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.text_box h1 {
+    font-size: 7rem;
+
+}
+
+.text_box p {
+    margin: 2rem 0 4rem;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.backToHm {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid#fff;
+    padding: 1.2rem 3.4rem;
+    font-size: 1.5rem;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.backToHm:hover {
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+/* -----  About Page Code End -------- */
